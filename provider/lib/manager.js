@@ -48,10 +48,10 @@ module.exports = function (logger, triggerDB, redisClient) {
     //* is needed 
     //****************************************************
     this.registerHealthObject = function (healthObj) {
-        var method = 'registerHealthObject'; 
-        
-        this.healthObject = healthObj;
-        logger.info(method, 'Health obj successfully registered ');    
+       var method = 'registerHealthObject'; 
+    
+       this.healthObject = healthObj;
+       logger.info(method, 'Health obj successfully registered ');    
     };
     
     // Add a trigger: listen for changes and dispatch.
@@ -114,7 +114,11 @@ module.exports = function (logger, triggerDB, redisClient) {
             });
 
             feed.on('stop', function () {
+<<<<<<< HEAD
                 logger.info(method, "Cloudant provider stop change listening socket to customer DB for trigger:",  triggerData.id );
+=======
+                logger.error(method, "Cloudant provider stop change listening socket to customer DB for trigger:",  triggerData.id );
+>>>>>>> 401e3dc (Improvement of logging, delayed Canary Doc delete and earlier self test)
             });
             
             feed.follow();
@@ -235,13 +239,21 @@ module.exports = function (logger, triggerDB, redisClient) {
 
             if (isMonitoringTrigger(monitorTrigger, triggerIdentifier)) {
                 self.monitorStatus.triggerStopped = "success";
+<<<<<<< HEAD
                 if ( self.healthObject ) {
+=======
+                if ( healthObject ) {
+>>>>>>> 401e3dc (Improvement of logging, delayed Canary Doc delete and earlier self test)
                 	//**************************************************
                 	//* trigger the health obj to pull the monitor status 
                 	//* of the successfully executed self-test trigger 
                 	//* immediately, instead of waiting next monitor() loop
                 	//***************************************************
+<<<<<<< HEAD
                 	self.healthObject.updateMonitorStatus()
+=======
+                	healthObject.updateMonitorStatus()
+>>>>>>> 401e3dc (Improvement of logging, delayed Canary Doc delete and earlier self test)
                 }
             }
         }
@@ -506,7 +518,11 @@ module.exports = function (logger, triggerDB, redisClient) {
             });
 
             feed.on('stop', function () {
+<<<<<<< HEAD
                 logger.info(method, "Cloudant provider stop change listening socket to trigger configuration database");
+=======
+                logger.error(method, "Cloudant provider stop change listening socket to trigger configuration database");
+>>>>>>> 401e3dc (Improvement of logging, delayed Canary Doc delete and earlier self test)
             });
             
             feed.on('error', function (err) {

@@ -56,7 +56,6 @@ var monitoringInterval = process.env.MONITORING_INTERVAL || constants.MONITOR_IN
 var firstMonitoringWaittime = Math.round(monitoringInterval / 5)
 
 
-
 // Create the Provider Server
 var server = http.createServer(app);
 server.listen(app.get('port'), function () {
