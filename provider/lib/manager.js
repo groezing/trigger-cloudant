@@ -48,10 +48,17 @@ module.exports = function (logger, triggerDB, redisClient) {
     //* is needed 
     //****************************************************
     this.registerHealthObject = function (healthObj) {
+<<<<<<< Upstream, based on 71e749bccca1c6a849741aeeccce81f3b015dffc
        var method = 'registerHealthObject'; 
     
        this.healthObject = healthObj;
        logger.info(method, 'Health obj successfully registered ');    
+=======
+        var method = 'registerHealthObject'; 
+        
+        this.healthObject = healthObj;
+        logger.info(method, 'Health obj successfully registered ');    
+>>>>>>> a4d4903 fixed the healthObj usage 
     };
     
     // Add a trigger: listen for changes and dispatch.
